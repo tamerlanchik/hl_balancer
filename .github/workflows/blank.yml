@@ -39,10 +39,10 @@ jobs:
         KEY: ${{ secrets.DEPLOY_KEY }}
         PORT: 22
       with:
-        source: "./load-balancer.conf"
+        source: "load-balancer.conf"
         target: "~/conf"
-        rm: true
-        overwrite: true
+#         rm: true
+#         overwrite: true
 
     - name: Executing remote  command
       uses: appleboy/ssh-action@master
