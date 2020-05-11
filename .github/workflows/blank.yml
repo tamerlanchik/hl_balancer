@@ -40,7 +40,7 @@ jobs:
         PORT: 22
       with:
         source: "./load-balancer.conf"
-        target: "~/"
+        target: "~/conf"
         rm: true
         overwrite: true
 
@@ -51,4 +51,4 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         KEY: ${{ secrets.DEPLOY_KEY }}
         PORT: 22
-        script: sudo rm /etc/nginx/conf.d/load-balancer.conf && sudo mv ~/load-balancer.conf /etc/nginx/conf.d/ && sudo systemctl restart nginx
+        script: sudo rm /etc/nginx/conf.d/load-balancer.conf && sudo mv ~/conf/load-balancer.conf /etc/nginx/conf.d/ && sudo systemctl restart nginx
