@@ -41,7 +41,8 @@ jobs:
       with:
         source: "./load-balancer.conf"
         target: "/etc/nginx/conf.d/"
-        rm: false
+        rm: true
+        overwrite: true
 
     - name: Executing remote  command
       uses: appleboy/ssh-action@master
